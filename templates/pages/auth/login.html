@@ -12,6 +12,7 @@
         <form class="login-form form" action="{{urls.auth.check_login}}" method="post">
             {{inject 'useValidEmail' (lang 'forms.validate.common.email_address')}}
             {{inject 'enterPass' (lang 'forms.validate.common.password')}}
+            
             <div class="form-field">
                 <label class="form-label" for="login_email">{{lang 'login.field_email'}}</label>
                 <input class="form-input" name="login_email" id="login_email" type="email">
@@ -21,7 +22,9 @@
                 <input class="form-input" id="login_pass" type="password" name="login_pass" autocomplete="off">
             </div>
             <div class="form-actions">
-                <input type="submit" class="button button--primary" value="{{lang 'login.submit_value' }}">
+                <input type="hidden" id="redirect_to" name="redirect_to" value="/apparel">
+                <input type="submit" class="button button--primary" value="{{lang 'login.submit_value' }}" >
+                
                 <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
             </div>
         </form>

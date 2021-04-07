@@ -19,6 +19,12 @@
 
 {{/if}}
 <footer class="footer" role="contentinfo">
+    <style>
+        .mobileMenu-toggle .mobileMenu-toggleIcon, .mobileMenu-toggle .mobileMenu-toggleIcon:after, .mobileMenu-toggle .mobileMenu-toggleIcon:before {
+        background: rgb(255, 0, 0);
+        }
+        </style>
+        
     <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
     <div class="container">
         {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
@@ -27,7 +33,7 @@
                 footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
                 data-section-type="footer-webPages">
                     <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
-                    {{> components/common/social-links}}
+                    
             </article>
         {{/if}}
         <section class="footer-info">
@@ -85,6 +91,7 @@
                     {{> components/common/subscription-form}}
                 {{/if}}
                 {{> components/common/payment-icons}}
+                {{> components/common/test}}
             </article>
         </section>
         {{#if theme_settings.geotrust_ssl_common_name}}
@@ -98,6 +105,9 @@
         </div>
         {{/if}}
         {{#if theme_settings.show_powered_by}}
+        <div class="cc-logo">
+            <img src="../assets/img/cclogo.jpg"
+        </div>
             <div class="footer-copyright">
                 <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
             </div>

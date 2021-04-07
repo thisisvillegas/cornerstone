@@ -1,4 +1,5 @@
 <a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+
 {{#if banners.top}}
 <div class="banners" data-banner-location="top">
     {{#each (limit banners.top_metadata 1)}}
@@ -28,6 +29,9 @@
     <div class="navPages-container" id="menu" data-menu>
         {{> components/common/navigation-menu}}
     </div>
+    {{#if customer.customer_group_id "=="theme_settings.cg_banner_id_num}}
+    {{> components/common/customer-group-special}}
+    {{/if}} 
 </header>
 {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}}
