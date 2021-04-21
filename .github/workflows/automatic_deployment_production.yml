@@ -23,13 +23,13 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
 
-    # - name: npm cache
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: ~/.npm
-    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-node-
+    - name: npm cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
     - name: Install Stencil CLI Dependency
       run: npm install -g @bigcommerce/stencil-cli
 
